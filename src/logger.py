@@ -16,19 +16,15 @@
 #     level=logging.INFO,
 # )
 
-# if __name__=="__main__":
-#     logging.info("Logging has started")
 import logging
 import os
 from datetime import datetime
 
 LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
 
-# Create only the logs folder
 logs_folder = os.path.join(os.getcwd(), "logs")
 os.makedirs(logs_folder, exist_ok=True)
 
-# Now create full file path
 LOG_FILE_PATH = os.path.join(logs_folder, LOG_FILE)
 
 logging.basicConfig(
@@ -37,7 +33,4 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
-if __name__ == "__main__":
-    logging.info("Logging has started")
-
-print("Log file path:", LOG_FILE_PATH)
+print("Logger configured. File:", LOG_FILE_PATH)
